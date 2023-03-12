@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PAd-Id-KUL">
+                                <rect key="frame" x="39.5" y="151.5" width="335" height="31"/>
+                                <connections>
+                                    <action selector="changeVolume:" destination="BYZ-38-t0r" eventType="valueChanged" id="aEm-1z-a7s"/>
+                                </connections>
+                            </slider>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jingle" translatesAutoresizingMaskIntoConstraints="NO" id="Ff9-IA-QjE">
+                                <rect key="frame" x="41.5" y="281.5" width="331" height="333"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ff9-IA-QjE" secondAttribute="height" multiplier="249:250" id="SRi-KE-FdU"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwR-gk-iZN">
+                                <rect key="frame" x="87" y="720" width="25" height="24"/>
+                                <state key="normal" image="arrow.left.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="previous:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1GF-Rh-Xb4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCR-9t-uCh">
+                                <rect key="frame" x="293" y="720" width="25" height="24"/>
+                                <state key="normal" image="arrow.right.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hcx-H0-HYx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwY-N4-EVD">
+                                <rect key="frame" x="166" y="699" width="82" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="2Ll-zu-Jcr"/>
+                                    <constraint firstAttribute="width" secondItem="LwY-N4-EVD" secondAttribute="height" multiplier="82:81" id="W6w-in-GDh"/>
+                                    <constraint firstAttribute="width" constant="82" id="tRd-rl-HCw"/>
+                                </constraints>
+                                <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="playPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oNH-kQ-cEs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YwR-gk-iZN" firstAttribute="top" secondItem="Ff9-IA-QjE" secondAttribute="bottom" constant="105.5" id="8WD-P9-fib"/>
+                            <constraint firstItem="PAd-Id-KUL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gpe-ql-rvO"/>
+                            <constraint firstItem="PAd-Id-KUL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="H3Z-Zv-maH"/>
+                            <constraint firstItem="PCR-9t-uCh" firstAttribute="leading" secondItem="LwY-N4-EVD" secondAttribute="trailing" constant="45" id="THJ-0m-PjX"/>
+                            <constraint firstItem="Ff9-IA-QjE" firstAttribute="top" secondItem="PAd-Id-KUL" secondAttribute="bottom" constant="100" id="W1S-gw-78z"/>
+                            <constraint firstItem="PCR-9t-uCh" firstAttribute="top" secondItem="Ff9-IA-QjE" secondAttribute="bottom" constant="105.5" id="YQg-2Z-XDK"/>
+                            <constraint firstItem="Ff9-IA-QjE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="dOF-Es-yFX"/>
+                            <constraint firstItem="YwR-gk-iZN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="kBd-QJ-YwU"/>
+                            <constraint firstItem="Ff9-IA-QjE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ksy-HE-8Xc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PCR-9t-uCh" secondAttribute="trailing" constant="96" id="lmj-FM-Umo"/>
+                            <constraint firstItem="LwY-N4-EVD" firstAttribute="top" secondItem="Ff9-IA-QjE" secondAttribute="bottom" constant="84.5" id="ly3-FP-u67"/>
+                            <constraint firstItem="LwY-N4-EVD" firstAttribute="leading" secondItem="YwR-gk-iZN" secondAttribute="trailing" constant="54" id="n5z-ym-pPa"/>
+                            <constraint firstItem="Ff9-IA-QjE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wb3-sp-4JJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="LwY-N4-EVD" id="7ZD-gb-hKC"/>
+                        <outlet property="img" destination="Ff9-IA-QjE" id="fPC-Mq-daN"/>
+                        <outlet property="slider" destination="PAd-Id-KUL" id="m7f-xU-xUS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.left.circle" catalog="system" width="128" height="121"/>
+        <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
+        <image name="jingle" width="498" height="500"/>
+        <image name="play" width="452" height="452"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
